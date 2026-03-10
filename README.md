@@ -1,2 +1,19 @@
 # ISDOC
+
 A library and a tool for working with [ISDOC](https://cs.wikipedia.org/wiki/ISDOC) files.
+
+## Features
+
+This project provides a CLI tool (`ISDOC.CLI`) with the following capabilities:
+
+- **Attach**: Embed an ISDOC file into a PDF file as an alternative representation.
+- **Extract**: Retrieve an ISDOC file embedded in a PDF.
+- **AutoPair**: Automatically process all `.isdoc` and `.pdf` file pairs in a directory (and optionally its subdirectories), attaching each ISDOC to its corresponding PDF and saving the result with a specified prefix.
+
+## Future Development
+
+New features will be added on an as-needed basis.
+
+## Contributions
+
+If you would like to contribute, I'll be happy to merge your pull request as long as it respects the project's formatting and coding standards.

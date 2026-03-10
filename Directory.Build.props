@@ -1,0 +1,16 @@
+<Project>
+
+    <PropertyGroup>
+        <!-- This is needed to make this file work with 'dotnet build' without explicitly specified configuration to build (e.g. -c Debug). -->
+        <!-- We set Configuration to Debug explicitly here unless already set because that is what Microsoft.Common.props would do a moment -->
+        <!-- later anyway, but we need the value already now. See https://github.com/dotnet/msbuild/issues/11260 for further explanation. -->
+        <Configuration Condition="!Exists('$(Configuration)')">Debug</Configuration>
+
+        <BuildRoot>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)\.build'))</BuildRoot>
+        <BaseIntermediateOutputPath>$(BuildRoot)\Temp\$(MSBuildProjectName)</BaseIntermediateOutputPath>
+        <OutputPath>$(BuildRoot)\$(Configuration)\$(MSBuildProjectName)</OutputPath>
+
+        <Version Condition="$(Version) == ''">0.1.2603.1000</Version>
+    </PropertyGroup>
+
+</Project>

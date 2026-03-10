@@ -52,3 +52,13 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+
+# user settings
+*.DotSettings.user
+.idea/
+
+# build directory
+/.build/
+
+# local test files
+/tests/
