@@ -64,7 +64,7 @@ public sealed class Validate : BaseCommand
     }
     catch( Exception ex )
     {
-      Console.Error.WriteLine( $"Unexpected Error: {ex.Message}" );
+      Console.Error.WriteLine( $"Unexpected error: {ex.Message}" );
       return ExitCode.UnexpectedError;
     }
   }

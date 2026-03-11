@@ -14,11 +14,13 @@ static class Program
     };
 
     var pdfAttachmentService = new PdfAttachmentService();
-    var isdocValidationService = new IsdocValidationService();
-    rootCommand.Subcommands.Add( new Attach( pdfAttachmentService ) );
-    rootCommand.Subcommands.Add( new AutoPair( pdfAttachmentService ) );
-    rootCommand.Subcommands.Add( new Extract( pdfAttachmentService ) );
-    rootCommand.Subcommands.Add( new Validate( isdocValidationService ) );
+
+    var cmds = rootCommand.Subcommands;
+    cmds.Add( new Attach( pdfAttachmentService ) );
+    cmds.Add( new AutoPair( pdfAttachmentService ) );
+    cmds.Add( new Extract( pdfAttachmentService ) );
+    cmds.Add( new Validate( new IsdocValidationService() ) );
+    cmds.Add( new Render( new IsdocRenderingService() ) );
 
     try
     {
