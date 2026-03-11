@@ -53,9 +53,7 @@ public sealed class Extract : BaseCommand
       var isdocBytes = _pdfAttachmentService.ExtractIsdocFromPdf( inputPdfPath, out var isAlternative );
 
       if( !isAlternative )
-      {
         Console.WriteLine( "Warning: ISDOC attachment is not properly marked as alternative representation." );
-      }
 
       File.WriteAllBytes( outputIsdocPath, isdocBytes );
       Console.WriteLine( $"Extracted ISDOC to: {outputIsdocPath}" );

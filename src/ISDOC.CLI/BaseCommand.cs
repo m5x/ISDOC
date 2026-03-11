@@ -11,4 +11,3 @@ public abstract class BaseCommand
     return command.CommandLineCommand;
   }
 }
-

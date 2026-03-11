@@ -41,7 +41,6 @@ public sealed class PdfAttachmentService
     {
       var namesArray = embeddedFiles.GetAsArray( PdfName.Names );
       if( namesArray is not null )
-      {
         for( var i = 0; i < namesArray.Size(); i += 2 )
         {
           var fileName = namesArray.GetAsString( i ).ToUnicodeString();
@@ -53,12 +52,10 @@ public sealed class PdfAttachmentService
               return result;
           }
         }
-      }
     }
 
     var afArray = catalog.GetPdfObject().GetAsArray( new( "AF" ) );
     if( afArray is not null )
-    {
       for( var i = 0; i < afArray.Size(); i++ )
       {
         var fileSpecDict = afArray.GetAsDictionary( i );
@@ -72,7 +69,6 @@ public sealed class PdfAttachmentService
             return result;
         }
       }
-    }
 
     throw new InvalidOperationException( "No ISDOC attachment found in the PDF file." );
   }
